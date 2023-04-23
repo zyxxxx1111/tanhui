@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: url(../images/bg.jpg) no-repeat top center;
+    line-height: 1.15;
+  }
+  header {
+    position: relative;
+    height: 1.25rem;
+    background: url(../images/head_bg.png) no-repeat;
+    background-size: 100% 100%;
+  }
+  header h2 {
+    font-size: 0.375rem;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    line-height: 1rem;
+  }
+  header .mulu {
+    position: absolute;
+    top: 0;
+    right: 0.325rem;
+    line-height: 0.9375rem;
+    font-size: 0.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    padding-right: 1.4rem;
+  }
+  header .mulu .navs {
+    display: flex;
+    align-items: center;
+    padding-left: 0.15rem;
+  }
+  header .mulu .navs .caidan{
+    display: flex;
+    align-items: center;
+    color:#fff;
+    font-size:50px;
+    padding-left: 0.15rem;
+  }
+  header .mulu .navs .caidann{
+    display: flex;
+    align-items: center;
+    color:#fff;
+    font-size:50px;
+    padding-left: 0.15rem;
+  }
+  header .mulu .navs a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.25rem;
+    padding: 0.25rem;
+    text-align: right;
+  }
+  header .mulu .icon-home2 {
+    font-size: 25px;
+    padding-right: 0.35rem;
+    color: rgb(232, 136, 134);
+    cursor: pointer;
+  }
+  header .mulu ul {
+    display: none;
+    position: absolute;
+    top: 50px;
+    width: 40%;
+    background-image: url(../images/bg.jpg);
+    /* background-color: #DDA0DD; */
+    z-index: 9;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+  }
+  header .mulu ul li {
+    border-bottom: 1px solid #fff;
+    display: block;
+  }
+  header .mulu ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  header .mulu ul li a:hover {
+    background-color: #cd853f;
+  }
+  header .showtime {
+    position: absolute;
+    left: 0.375rem;
+    line-height: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.25rem;
+    top: 0;
+  }
+  .mainbox {
+    display: flex;
+    min-width: 1024px;
+    max-width: 1463px;
+    margin: 0 auto;
+    /* width:2400px; */
+    height: 600px;
+    padding: 0.1rem 0.1rem 0;
+  }
+  .mainbox .zhuti {
+    position: relative;
+    height: 12rem;
+    width: 30rem;
+    margin: 0.12rem 4.5rem 0.12rem 4.5rem;
+    border: 1px solid rgba(25, 186, 139, 0.17);
+    /* margin-bottom: 0.1875rem; */
+    /* background: url(../images/line.png) rgba(255, 255, 255, 0.03); */
+  }
+  .mainbox .zhuti::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #02a6b5;
+    border-top: 2px solid #02a6b5;
+    content: '';
+  }
+  .mainbox .zhuti::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #02a6b5;
+    border-top: 2px solid #02a6b5;
+    content: '';
+  }
+  .mainbox .zhuti .zhuti-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .mainbox .zhuti .zhuti-footer::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #02a6b5;
+    border-bottom: 2px solid #02a6b5;
+    content: '';
+  }
+  .mainbox .zhuti .zhuti-footer::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #02a6b5;
+    border-bottom: 2px solid #02a6b5;
+    content: '';
+  }
+  .mainbox .zhuti .main-timeline {
+    overflow: hidden;
+  }
+  .mainbox .zhuti .main-timeline .timeline {
+    padding:0;
+    width: 130px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .mainbox .zhuti .main-timeline .timeline .timeline-icon {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #008b8b;
+    border-bottom: 3px solid #ccc;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timeline .timeline-icon:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #008b8b;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -9.5px;
+    left: 0;
+    right: 0;
+  }
+  .mainbox .zhuti .main-timeline .timeline .year {
+    display: block;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #008b8b;
+    left: 25%;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 7px;
+    z-index: 1;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timeline .timeline-content {
+    padding: 0 ;
+  }
+  .mainbox .zhuti .main-timeline .timeline .post {
+    font-size: 15px;
+    font-weight: 400;
+    color: #008b8b;
+    margin: 0 0 40px 0;
+  }
+  .mainbox .zhuti .main-timeline .timelinee {
+    margin-top: -26.4%;
+    margin-left: 14.6%;
+    width: 130px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .mainbox .zhuti .main-timeline .timelinee .timeline-icon {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #cca872;
+    border-bottom: 3px solid #ccc;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelinee .timeline-icon:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #cca872;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -9.5px;
+    left: 0;
+    right: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelinee .year {
+    display: block;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #cca872;
+    left: 25%;
+    font-size: 15px;
+    font-weight:600;
+    color: #fff;
+    margin-bottom: 7px;
+    z-index: 1;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelinee .timeline-content {
+    padding: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelinee .post {
+    font-size: 15px;
+    font-weight: 400;
+    color: #cca872;
+    margin: 0 0 40px 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineee {
+    margin-top: -26.38%;
+    margin-left: 28%;
+    width: 130px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .mainbox .zhuti .main-timeline .timelineee .timeline-icon {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #3498db;
+    border-bottom: 3px solid #ccc;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineee .timeline-icon:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #3498db;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -9.5px;
+    left: 0;
+    right: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineee .year {
+    display: block;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #3498db;
+    left: 25%;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 7px;
+    z-index: 1;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineee .timeline-content {
+    padding: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineee .post {
+    font-size: 15px;
+    font-weight: 400;
+    color:#3498db ;
+    margin: 0 0 40px 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeee {
+    margin-top: -24.5%;
+    margin-left: 42%;
+    width: 130px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .mainbox .zhuti .main-timeline .timelineeee .timeline-icon {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color:  #e77e21;
+    border-bottom: 3px solid #ccc;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineeee .timeline-icon:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #e77e21;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -9.5px;
+    left: 0;
+    right: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeee .year {
+    display: block;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #e77e21;
+    left: 25%;
+    font-size: 15px;
+    font-weight:600;
+    color: #fff;
+    margin-bottom: 7px;
+    z-index: 1;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineeee .timeline-content {
+    padding: 0 ;
+  }
+  .mainbox .zhuti .main-timeline .timelineeee .post {
+    font-size: 15px;
+    font-weight: 400;
+    color: #e77e21;
+    margin: 0 0 40px 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeee {
+    margin-top: -26.36%;
+    margin-left: 56%;
+    width: 130px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeee .timeline-icon {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #727cb6;
+    border-bottom: 3px solid #ccc;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeee .timeline-icon:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #727cb6;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -9.5px;
+    left: 0;
+    right: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeee .year {
+    display: block;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #727cb6;
+    left: 25%;
+    font-size:15px;
+    font-weight:600;
+    color: #fff;
+    margin-bottom: 7px;
+    z-index: 1;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeee .timeline-content {
+    padding: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeee .post {
+    font-size: 15px;
+    font-weight: 400;
+    color: #727cb6;
+    margin: 0 0 40px 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeee {
+    margin-top: -24.46%;
+    margin-left: 70%;
+    width: 130px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeee .timeline-icon {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #ed687c;
+    border-bottom: 3px solid #ccc;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeee .timeline-icon:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ed687c;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -9.5px;
+    left: 0;
+    right: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeee .year {
+    display: block;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #ed687c;
+    left: 25%;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 7px;
+    z-index: 1;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeee .timeline-content {
+    padding: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeee .post {
+    font-size: 15px;
+    font-weight: 400;
+    color: #ed687c;
+    margin: 0 0 40px 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeeee {
+    margin-top: -24.5%;
+    margin-left: 84%;
+    width: 130px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeeee .timeline-icon {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: rgb(46, 139, 87);
+    border-bottom: 3px solid #ccc;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeeee .timeline-icon:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(46, 139, 87);
+    margin: 0 auto;
+    position: absolute;
+    bottom: -9.5px;
+    left: 0;
+    right: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeeee .year {
+    display: block;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background:rgb(46, 139, 87);
+    left: 25%;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 7px;
+    z-index: 1;
+    position: relative;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeeee .timeline-content {
+    padding: 0;
+  }
+  .mainbox .zhuti .main-timeline .timelineeeeeee .post {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(46, 139, 87);
+    margin: 0 0 40px 0;
+  }
+  .mainbox .zhuti .hezi {
+    height: 8.2rem;
+    width:14.5rem; 
+    margin-top:-10px;
+    padding-bottom:-10px;
+    /* border: 1px solid rgba(25, 186, 139, 0.17); */
+  }
+ 
+

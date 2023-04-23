@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可视化大屏</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./fonts/style.css">
+</head>
+
+<body>
+    <!--头部的盒子-->
+    <header>
+        <h1>碳绘</h1>
+        <div class="mulu">
+            <div class="icon-home2"></div>
+            <ul id="ddList">
+                <li>
+                    <a href="/index.html">世界净碳全景</a>
+                </li>
+                <li>
+                    <a href="./html/third.html">中国净碳全景</a>
+                </li>
+                <li>
+                    <a href="./html/geren.html">个人碳系数</a>
+                </li>
+            </ul>
+            <div class="navs">
+                <div class="nav">
+                    <a href="./html/second.html">全球碳数据中心</a>
+                </div>
+                <div class="nav">
+                    <div class="caidan">·</div>
+                    <ul id="dddList">
+                        <li><a href="./html/zhengce.html" target="_blank">政策规划</a></li>
+            <li><a href="./html/qiye.html" target="_blank">企业创新</a></li>
+            <li><a href="./html/chanye.html" target="_blank">环保行业</a></li>
+            <li><a href="./html/nengyuan.html" target="_blank">能源产值</a></li>  
+                    </ul>
+                </div>
+                <div class="nav">
+                    <a href="./html/zhengce.html">中国碳数据中心</a>
+                </div>
+                <div class="nav">
+                    <div class="caidann">·</div>
+                    <ul id="ddddList">
+                        <li><a href="./html/lian.html" target="_blank">食物供应链的碳排放</a></li>
+                        <li><a href="./html/liangshi.html" target="_blank">全球食物生产碳排</a></li>
+                        <li><a href="./html/wenshi.html" target="_blank">每一千千卡食品的碳排放量</a></li>
+                        <li><a href="./html/tanhui.html" target="_blank">植物碳汇库</a></li>      
+                    </ul>
+                </div>
+                <div class="nav">
+                    <a href="./html/lian.html">智慧碳管理</a>
+                </div>
+            </div>
+        </div>
+        <div class="showtime"></div>
+        <script>
+         var t =null;
+         t = setTimeout(time, 1000);//开始运行
+         function time() {
+             clearTimeout(t);//清除定时器
+             dt = new Date();
+             var y = dt.getFullYear();
+             var mt = dt.getMonth() + 1;
+             var day = dt.getDate();
+             var h = dt.getHours();//获取时
+             var m = dt.getMinutes();//获取分
+             var s = dt.getSeconds();//获取秒
+             document.querySelector(".showtime").innerHTML = '北京时间：'+ y + "年" + mt + "月" + day +"日"+"-"+ h + "时" + m + "分" + s + "秒";
+             t = setTimeout(time, 1000); //设定定时器，循环运行     
+         }
+     </script>
+    </header>
+    <!--页面主体部分-->
+    <section class="mainbox">
+        <!--第一列-->
+        <div class="column">
+            <div class="paris">
+                <a href="./html/paris.html" target="_blank">联合减碳协议</a>
+                <div class="jianjie">
+                    <p class="content">
+                        &emsp;&emsp;&emsp;1992---里约宣言&emsp;&emsp;&emsp;&emsp;<br/>&emsp;&emsp;&emsp;通过方：联合国环境和发展大会&emsp;&emsp;&emsp;<br/>
+                        &emsp;&emsp;&emsp;1997---京都议定书&emsp;&emsp;&emsp;&emsp;<br/>&emsp;&emsp;通过方：联合国气候变化框架公约&emsp;&emsp;<br/>
+                        &emsp;&emsp;&emsp;&emsp;2008---多哈发展议程 &emsp;&emsp;&emsp;&emsp;<br/> &emsp;&emsp;通过方：联合国气候变化大会&emsp;&emsp;<br/>
+                        &emsp;&emsp;&emsp;&emsp;2010---圣地亚哥行动计划&emsp;&emsp;&emsp;&emsp;<br/>&emsp;&emsp;&emsp;通过方：联合国气候变化会议&emsp;&emsp;&emsp;<br/>
+                        &emsp;&emsp;&emsp;2013---南南气候变化合作宣言 &emsp;&emsp;&emsp;<br/>&emsp;&emsp;通过方：南南气候变化合作高层会议&emsp;&emsp;<br/>
+                        &emsp;&emsp;&emsp;&emsp;2014---纽约气候变化宣言&emsp;&emsp;&emsp;&emsp;<br/>  &emsp;&emsp;&emsp;&emsp;通过方：联合国气候峰会 &emsp;&emsp;&emsp;&emsp;<br/>
+                        &emsp;&emsp;2014---南太平洋岛国气候变化宣言&emsp;&emsp;<br/>  &emsp;&emsp;&emsp;通过方：南太平洋岛国领导人会议&emsp;&emsp;&emsp;<br/>
+                        &emsp;&emsp;&emsp;&emsp;2015---巴黎协定&emsp;&emsp;&emsp;&emsp;<br/>  &emsp;&emsp;&emsp;通过方：联合国气候变化框架公约&emsp;&emsp;&emsp;<br/>
+                    <p class="fakecontent"></p>
+                </div>
+                <div class="paris-footer"></div>
+            </div>
+            <div class="zhuigan">
+                <h2>世界主要国家年度碳排放变化</h2>
+                <div class="cchart"></div>
+                <div class="zhuigan-footer"></div>
+            </div>
+        </div>
+        <!--第二列-->
+        <div class="column">
+            <div class="ball">
+                <h2>世界碳净零全景</h2>
+                <div class="chart" id="earth_map_3D"></div>
+            </div>
+        </div>
+        <!--第三列-->
+        <div class="column">
+            
+            <div class="temp">
+                <h2>全球平均温度异常</h2>
+                <div class="zhexian"></div>
+                <div class="at-footer"></div>
+            </div>
+            <div class="zymc">
+                <h2>“双碳”热词图谱</h2>
+                <div class="mingci"></div>
+                <div class="zymc-footer"></div>
+            </div>
+        </div>
+    </section>
+    <script src="js/echarts.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts-gl/2.0.8/echarts-gl.min.js"></script>
+    <script src="js/word.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/globalMap.js"></script>
+</body>
+
+</html>
