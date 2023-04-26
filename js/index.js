@@ -289,7 +289,7 @@
         textStyle:{
           //color:'#4c9bfd'
           color:'#FFFAFA',
-          fontSize:'10px'
+          fontSize:'8px'
         },
         left:'0%',
         top:"-1%"
