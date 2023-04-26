@@ -288,7 +288,8 @@
         data: ['长期平均温度', '平均水平', '短期平均温度'],
         textStyle:{
           //color:'#4c9bfd'
-          color:'#FFFAFA'
+          color:'#FFFAFA',
+          fontSize:'11.5px'
         },
         left:'0%',
         top:"-1%"
