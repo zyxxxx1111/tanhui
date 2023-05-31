@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩国减碳政策规划</title>
+    <link rel="stylesheet" href="../css/korea.css">
+    <link rel="stylesheet" href="../fonts/style.css">
+</head>
+<body>
+    <!--头部的盒子-->
+    <header>
+        <h2>韩国减碳政策规划</h2>
+		<div class="mulu">
+            <div class="navs">
+                <div class="nav">
+                    <div class="caida">▼</div>
+                    <ul id="ddList">
+                        <li><a href="second.html" target="_blank">全球碳数据中心</a></li>
+                    </ul>
+                </div>
+                <div class="nav">
+                    <a href="/index.html">世界净碳全景</a>
+                </div>
+                <div class="nav">
+                    <div class="caidan">▼</div>
+                    <ul id="dddList">
+                        <li><a href="zhengce.html" target="_blank">政策规划</a></li>
+            <li><a href="qiye.html" target="_blank">企业创新</a></li>
+            <li><a href="chanye.html" target="_blank">环保行业</a></li>
+            <li><a href="nengyuan.html" target="_blank">能源产值</a></li>  
+                    </ul>
+                </div>
+                <div class="nav">
+                    <a href="third.html">中国碳数据中心</a>
+                </div>
+                <div class="nav">
+                    <div class="caidann">▼</div>
+                    <ul id="ddddList">
+                        <li><a href="lian.html" target="_blank">食物供应链的碳排放</a></li>
+                        <li><a href="liangshi.html" target="_blank">全球食物生产碳排</a></li>
+                        <li><a href="wenshi.html" target="_blank">每一千千卡食品的碳排放量</a></li>
+                        <li><a href="tanhui.html" target="_blank">植物碳汇库</a></li> 
+                        <li><a href="geren.html" target="_blank">个人碳系数</a></li>         
+                    </ul>
+                </div>
+                <div class="nav">
+                    <a href="lian.html">智慧碳管理</a>
+                </div>
+            </div>
+        </div>
+        <div class="showtime"></div>
+        <script>
+         var t =null;
+         t = setTimeout(time, 1000);//开始运行
+         function time() {
+             clearTimeout(t);//清除定时器
+             dt = new Date();
+             var y = dt.getFullYear();
+             var mt = dt.getMonth() + 1;
+             var day = dt.getDate();
+             var h = dt.getHours();//获取时
+             var m = dt.getMinutes();//获取分
+             var s = dt.getSeconds();//获取秒
+             document.querySelector(".showtime").innerHTML = '北京时间：'+ y + "年" + mt + "月" + day +"日"+"-"+ h + "时" + m + "分" + s + "秒";
+             t = setTimeout(time, 1000); //设定定时器，循环运行     
+         }
+     </script>
+     </header>
+     <section class="mainbox">
+        <div class="zhuti">
+            <div class="main-timeline">
+				<div class="timeline">
+					<a href="#" class="timeline-content">
+						<span class="timeline-year">2020</span>
+						<div class="timeline-icon">
+							<i class="icon-rocket"></i>
+						</div>
+						<div class="content">
+							<h3 class="title"></h3>
+							<p class="description">《绿色新政策》
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="timeline">
+					<a href="#" class="timeline-content">
+						<span class="timeline-year">2019</span>
+						<div class="timeline-icon">
+							<i class="icon-users"></i>
+						</div>
+						<div class="content">
+							<h3 class="titlee">第二次长期低碳发展战略</h3>
+							<p class="description">
+								
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="timeline">
+					<a href="#" class="timeline-content">
+						<span class="timeline-year">2018</span>
+						<div class="timeline-icon">
+							<i class="icon-table"></i>
+						</div>
+						<div class="content">
+							<h3 class="titleee">电动汽车普及计划</h3>
+							<p class="description">
+								
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="timeline">
+					<a href="#" class="timeline-content">
+						<span class="timeline-year">2017</span>
+						<div class="timeline-icon">
+							<i class="icon-briefcase"></i>
+						</div>
+						<div class="content">
+							<h3 class="titleeee">低碳绿色成长战略</h3>
+							<p class="description">
+								
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="timeline">
+					<a href="#" class="timeline-content">
+						<span class="timeline-year">2015</span>
+						<div class="timeline-icon">
+							<i class="icon-users"></i>
+						</div>
+						<div class="content">
+							<h3 class="titleeeee">第一次长期低碳发展战略</h3>
+							<p class="description">
+								
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+     </section>
+     <script src="../js/echarts.js"></script>
+     <script src="../js/jquery.min.js"></script>
+     <script src="../js/flexible.js"></script> 
+     <script src="../js/Brazil.js"></script> 
+     <script src="../js/L2Dwidget.min.js"></script>
+     <script src="../js/common.js"></script>
+</body>
+</html>

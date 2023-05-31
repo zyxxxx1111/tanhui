@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 layui.css -->
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <!-- 引入 layui.js -->
+    <script src="../layui/layui.js"></script>
+    <title>主要能源</title>
+</head>
+
+<body>
+    <table class="layui-table" lay-filter="test" lay-data="{height:315, url:'/static/2.8/json/table/user.json', page:true}" id="ID-table-demo-init">
+        
+    </table>
+</body>
+
+<script>
+    layui.use(['table', 'dropdown'], function(){
+        var table = layui.table;
+
+          // 渲染，并获得实例对象
+        table.render({
+            elem: '#ID-table-demo-init', // 绑定元素选择器
+            //数据接口，后台访问页面路径
+            url: "http://127.0.0.1:7777/mainEnergySource/getList", 
+            // //开启分页
+            // page: true, 
+            cols: [[
+            {field:'number', title: '序号' , align:'center',type:'numbers'},
+                {field: 'target', title: 'target'},
+                {field: 'source', title: 'source'},
+                {field: 'value', title: 'value'},
+                {fixed: 'right', title:'操作', width: 150, minWidth: 125, toolbar: '#barDemo'}
+            ]],
+        })
+
+        // 监听行工具栏事件
+        table.on('tool(test)',function (obj) {
+            //得到当前操作行的相关信息
+            var tr = obj.data;
+            console.log(tr);
+            // 得到事件名，判断执行
+            var eventName = obj.event;
+            // 删除
+            if (eventName == 'del'){
+                // 确认框
+                layer.confirm('确认删除吗？',function (index) {
+                    console.log(index)
+                    // 删除指定tr
+                    $.ajax({
+                        type: "GET",
+                        contentType: "application/json; charset=utf-8",
+                        url: "http://127.0.0.1:7777/mainEnergySource/delete?id="+tr.id,
+                        // data: JSON.stringify({id:index.id}),
+                        cache: false,
+                        success: function(res) {
+                            if(res.code == 200){
+                                obj.del();
+                                console.log(res.message);
+                            }else{
+                                alert("失败");
+                                // showMessage(res.message,0);
+                            }
+                        },
+                        error: function() {
+                            console.log('失败');
+                        }
+                    });
+                    //关闭弹出层,index是当前弹出层的的下标
+                    layer.close(index);
+                });
+            }else if (eventName=='edit'){//编辑
+
+                layer.open({
+                    //formType: 2,//这里依然指定类型是多行文本框，但是在下面content中也可绑定多行文本框在这里插入代码片
+                    title: '修改',
+                    area: ['300px', '240px'],
+                    btnAlign: 'c',
+                    closeBtn:'1',//右上角的关闭
+                    content: `
+                        <input type="text" id="target" placeholder="target" value=`+tr.target+` class="layui-input">
+                        <input type="text" id="source" placeholder="source" value=`+tr.source+` class="layui-input">
+                        <input type="text" id="value" placeholder="value" value=`+tr.value+` class="layui-input">
+                    `,
+                    btn:['确认','取消','关闭'],
+                    yes: function (index, layero) {
+                        var doubleCarbon = {
+                            id:tr.id,target:$('#target').val(),
+                            source:$('#source').val(),
+                            value:$('#value').val()
+                        };
+                        $.ajax({
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            url: "http://127.0.0.1:7777/mainEnergySource/update",
+                            data: JSON.stringify(doubleCarbon),
+                            cache: false,
+                            success: function(res) {
+                                if(res.code == 200){
+                                    // obj.del();
+                                    // console.log(res.message);
+                                }else{
+                                    alert("失败");
+                                    // showMessage(res.message,0);
+                                }
+                            },
+                            error: function() {
+                                console.log('失败');
+                            }
+                        });
+                        layer.close(index);
+                        //可执行确定按钮事件并把备注信息（即多行文本框值）存入需要的地方
+                    },
+                    no:function(index){
+                        alert('您刚才点击了取消按钮');
+                        layer.close(index);
+                        return false;//点击按钮按钮不想让弹层关闭就返回false
+                    },
+                    close:function(index){
+                        alert('您刚才点击了关闭按钮');
+                        return false;//点击按钮按钮不想让弹层关闭就返回false
+                    }
+                });
+            }else if (eventName=='add'){//添加
+
+                layer.open({
+                    //formType: 2,//这里依然指定类型是多行文本框，但是在下面content中也可绑定多行文本框在这里插入代码片
+                    title: '添加',
+                    area: ['300px', '240px'],
+                    btnAlign: 'c',
+                    closeBtn:'1',//右上角的关闭
+                    content: `
+                        <input type="text" id="target" placeholder="target" class="layui-input">
+                        <input type="text" id="source" placeholder="source" class="layui-input">
+                        <input type="text" id="value" placeholder="value" class="layui-input">
+                    `,
+                    btn:['确认','取消','关闭'],
+                    yes: function (index, layero) {
+                        var doubleCarbon = {
+                            target:$('#target').val(),
+                            source:$('#source').val(),
+                            value:$('#value').val()
+                        };
+                        $.ajax({
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            url: "http://127.0.0.1:7777/mainEnergySource/add",
+                            data: JSON.stringify(doubleCarbon),
+                            cache: false,
+                            success: function(res) {
+                                if(res.code == 200){
+                                    // obj.del();
+                                    // console.log(res.message);
+                                }else{
+                                    alert("失败");
+                                    // showMessage(res.message,0);
+                                }
+                            },
+                            error: function() {
+                                console.log('失败');
+                            }
+                        });
+                        layer.close(index);
+                        //可执行确定按钮事件并把备注信息（即多行文本框值）存入需要的地方
+                    },
+                    no:function(index){
+                        alert('您刚才点击了取消按钮');
+                        layer.close(index);
+                        return false;//点击按钮按钮不想让弹层关闭就返回false
+                    },
+                    close:function(index){
+                        alert('您刚才点击了关闭按钮');
+                        return false;//点击按钮按钮不想让弹层关闭就返回false
+                    }
+                });
+            }
+        });
+    
+    })
+</script>
+<script type="text/html" id="barDemo">
+    <div class="layui-clear-space">
+        <a class="layui-btn layui-btn-xs" lay-event="add">添加</a>
+      <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+      <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </div>
+  </script>  
+</html>

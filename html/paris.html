@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国际联署协定</title>
+    <link rel="stylesheet" href="../css/paris.css">
+    <link rel="stylesheet" href="../fonts/style.css">
+</head>
+<body>
+     <!--头部的盒子-->
+     <header>
+        <h2 class="need_speak_dom">国际联署协定</h2>
+        <div class="mulu">
+            <div class="navs">
+                <div class="nav">
+                    <div class="caida">▼</div>
+                    <ul id="ddList">
+                        <li><a href="second.html" target="_blank">全球碳数据中心</a></li>
+                    </ul>
+                </div>
+                <div class="nav">
+                    <a href="/index.html">世界净碳全景</a>
+                </div>
+                <div class="nav">
+                    <div class="caidan">▼</div>
+                    <ul id="dddList">
+                        <li><a href="zhengce.html" target="_blank">政策规划</a></li>
+            <li><a href="qiye.html" target="_blank">企业创新</a></li>
+            <li><a href="chanye.html" target="_blank">环保行业</a></li>
+            <li><a href="nengyuan.html" target="_blank">能源产值</a></li>  
+                    </ul>
+                </div>
+                <div class="nav">
+                    <a href="third.html">中国碳数据中心</a>
+                </div>
+                <div class="nav">
+                    <div class="caidann">▼</div>
+                    <ul id="ddddList">
+                        <li><a href="lian.html" target="_blank">食物供应链的碳排放</a></li>
+                        <li><a href="liangshi.html" target="_blank">全球食物生产碳排</a></li>
+                        <li><a href="wenshi.html" target="_blank">每一千千卡食品的碳排放量</a></li>
+                        <li><a href="tanhui.html" target="_blank">植物碳汇库</a></li> 
+                        <li><a href="geren.html" target="_blank">个人碳系数</a></li>         
+                    </ul>
+                </div>
+                <div class="nav">
+                    <a href="lian.html">智慧碳管理</a>
+                </div>
+            </div>
+        </div>
+        <div class="showtime"></div>
+        <script>
+         var t =null;
+         t = setTimeout(time, 1000);//开始运行
+         function time() {
+             clearTimeout(t);//清除定时器
+             dt = new Date();
+             var y = dt.getFullYear();
+             var mt = dt.getMonth() + 1;
+             var day = dt.getDate();
+             var h = dt.getHours();//获取时
+             var m = dt.getMinutes();//获取分
+             var s = dt.getSeconds();//获取秒
+             document.querySelector(".showtime").innerHTML = '北京时间：'+ y + "年" + mt + "月" + day +"日"+"-"+ h + "时" + m + "分" + s + "秒";
+             t = setTimeout(time, 1000); //设定定时器，循环运行     
+         }
+     </script>
+     </header>
+     <section class="mainbox">
+        <!-- <div class="column"> -->
+            <div class="bali">
+            <h2>国际净碳历史背景</h2>
+            <div class="neirong">
+                <img src="../images/ccc.png" />
+<!-- <a href='https://www.un.org/zh/climatechange/paris-agreement' target="_blank">联合国：气候活动</a> -->
+            </div>
+            <div class="bali-footer"></div>
+        </div>
+    <!-- </div> -->
+        <!-- <div class="column"> -->
+            <div class="wancheng">
+                <div class="tigang">
+            <p>&nbsp; &nbsp;&nbsp;由国际气候研究中心 (CICERO)高级研究员罗比·安德鲁(Robbie Andrew)绘制的曲线，展现在《巴黎协定》设定的目标下，若将全球平均升温限制在1.5°C和2C内需要的情景。同一个控温目的下，每条曲线代表在不同年份进行碳达峰后，往后几十年内的碳容量，即曲线以下与y轴围成的微分面积，是此年度碳排放的最大限度值，本图摘取了2023年及以后的达峰年份，在2.0摄氏度目标曲线中，2030年份的达峰尤为突出，这与中国的“2030碳中和”目标紧密相关，对中国能否完成国际减碳目标任务的预测和支撑，有重要作用。</p>
+        </div>
+        <div class="zhexian">
+            <div class="zheyi"></div>
+            <div class="zheer"></div>
+        </div>
+        <div class="wancheng-footer"></div>
+            </div>
+        <!-- </div> -->
+     </section>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/flexible.js"></script>
+    <script src="../js/paris.js"></script> 
+    <script src="../js/L2Dwidget.min.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>
